@@ -152,7 +152,7 @@ def llm_assess_and_prompt(unit: Unit) -> Dict[str, str]:
 
 # ===== API =====
 @app.post("/assess-cin-migration")
-def assess_cin_migration(units: List[Unit]) -> List[Dict[str, Any]]:
+async def assess_cin_migration(units: List[Unit]) -> List[Dict[str, Any]]:
     out = []
     for u in units:
         obj = u.model_dump()
